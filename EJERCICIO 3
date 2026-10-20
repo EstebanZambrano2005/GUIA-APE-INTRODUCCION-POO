@@ -1,0 +1,67 @@
+class Mascota {
+    // Atributos pedidos
+    String nombre;
+    String especie;
+    int edad;
+    double peso;
+
+    // Constructor para inicializar los datos
+    public Mascota(String nombre, String especie, int edad, double peso) {
+        this.nombre = nombre;
+        this.especie = especie;
+        this.edad = edad;
+        this.peso = peso;
+    }
+}
+
+// 2. Clase Principal
+public class Ejercicio3 {
+    public static void main(String[] args) {
+        // Crear 3 mascotas
+        Mascota m1 = new Mascota("Max", "Perro", 3, 25.5);
+        Mascota m2 = new Mascota("Michi", "Gato", 2, 4.0);
+        Mascota m3 = new Mascota("Rex", "Perro", 5, 22.0);
+
+        System.out.println("--- LISTA DE MASCOTAS ---");
+
+        // Mascota 1
+        System.out.print(m1.nombre + " : " + m1.especie + " : " + m1.peso + " kg");
+        if (m1.peso > 20.0) {
+            System.out.print(" - Revisar peso");
+        }
+        System.out.println();
+
+        // Mascota 2
+        System.out.print(m2.nombre + " : " + m2.especie + " : " + m2.peso + " kg");
+        if (m2.peso > 20.0) {
+            System.out.print(" - Revisar peso");
+        }
+        System.out.println();
+
+        // Mascota 3
+        System.out.print(m3.nombre + " : " + m3.especie + " : " + m3.peso + " kg");
+        if (m3.peso > 20.0) {
+            System.out.print(" - Revisar peso");
+        }
+        System.out.println();
+
+        System.out.println("\n--- PRUEBA DE REFERENCIAS DE OBJETOS ---");
+
+        // Asignación indicada en la guía
+        Mascota m4 = m1;
+
+        // Sumamos 1 a la edad desde m4
+        m4.edad = m4.edad + 1;
+
+        // Imprimimos m1.edad
+        System.out.println("La edad de m1 es: " + m1.edad);
+
+        /* 
+         * EXPLICACIÓN EN COMENTARIO (requerido por el ejercicio):
+         * Al hacer 'Mascota m4 = m1;', NO se crea una copia nueva del objeto ni de sus datos.
+         * En Java, los objetos se manejan por REFERENCIA (direcciones de memoria).
+         * Por lo tanto, tanto 'm1' como 'm4' apuntan exactamente al mismo objeto en la memoria.
+         * Cualquier cambio realizado a través de 'm4' afectará directamente a 'm1'.
+         */
+    }
+}
