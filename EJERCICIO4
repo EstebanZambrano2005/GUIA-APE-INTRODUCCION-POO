@@ -1,0 +1,46 @@
+class Cuenta {
+    // Atributos pedidos
+    String titular;
+    double saldo;
+
+    // Constructor para guardar los valores
+    public Cuenta(String titular, double saldo) {
+        this.titular = titular;
+        this.saldo = saldo;
+    }
+}
+
+// 2. Clase Principal
+public class Ejercicio4 {
+    public static void main(String[] args) {
+        // Creamos las 2 cuentas con los saldos requeridos
+        Cuenta c1 = new Cuenta("Carlos", 200.0);
+        Cuenta c2 = new Cuenta("María", 350.0);
+
+        // --- CUENTA 1 ---
+        System.out.println("--- DEPÓSITOS MES A MES - " + c1.titular + " ---");
+        int mesesCuenta1 = 0;
+
+        // Bucle while hasta llegar a 500
+        while (c1.saldo < 500.0) {
+            c1.saldo = c1.saldo + 50.0; // depositamos 50 cada mes
+            mesesCuenta1++;             // contamos el mes
+            System.out.println(c1.titular + " : $" + c1.saldo);
+        }
+
+        System.out.println("\n--- DEPÓSITOS MES A MES - " + c2.titular + " ---");
+        int mesesCuenta2 = 0;
+
+        // Bucle while hasta llegar a 500
+        while (c2.saldo < 500.0) {
+            c2.saldo = c2.saldo + 50.0; // depositamos 50 cada mes
+            mesesCuenta2++;             // contamos el mes
+            System.out.println(c2.titular + " : $" + c2.saldo);
+        }
+
+        // --- RESULTADO FINAL ---
+        System.out.println("\n----------------------------------");
+        System.out.println("Meses necesarios para " + c1.titular + ": " + mesesCuenta1 + " meses.");
+        System.out.println("Meses necesarios para " + c2.titular + ": " + mesesCuenta2 + " meses.");
+    }
+}
