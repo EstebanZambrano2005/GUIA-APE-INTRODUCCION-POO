@@ -1,0 +1,55 @@
+class Libro {
+    String titulo;
+    boolean disponible;
+
+    public Libro(String t, boolean d) {
+        titulo = t;
+        disponible = d;
+    }
+}
+
+// Clase Socio
+class Socio {
+    String nombre;
+    int librosPrestados;
+
+    public Socio(String n, int p) {
+        nombre = n;
+        librosPrestados = p;
+    }
+}
+
+// Clase Principal
+public class Ejercicio5 {
+    public static void main(String[] args) {
+        // 4 Libros[cite: 1]
+        Libro l1 = new Libro("Cien anos", true);
+        Libro l2 = new Libro("Quijote", true);
+        Libro l3 = new Libro("Principito", true);
+        Libro l4 = new Libro("Odisea", true);
+
+        // 2 Socios[cite: 1]
+        Socio s1 = new Socio("Carlos", 0);
+        Socio s2 = new Socio("Maria", 0);
+
+        // Préstamos (socio 1 presta 2, socio 2 presta 1)[cite: 1]
+        l1.disponible = false; s1.librosPrestados++;
+        l2.disponible = false; s1.librosPrestados++;
+        l3.disponible = false; s2.librosPrestados++;
+
+        // Imprimir libros[cite: 1]
+        System.out.println(l1.titulo + " : " + (l1.disponible ? "Disponible" : "Prestado"));
+        System.out.println(l2.titulo + " : " + (l2.disponible ? "Disponible" : "Prestado"));
+        System.out.println(l3.titulo + " : " + (l3.disponible ? "Disponible" : "Prestado"));
+        System.out.println(l4.titulo + " : " + (l4.disponible ? "Disponible" : "Prestado"));
+
+        // Imprimir socios[cite: 1]
+        System.out.println(s1.nombre + " : " + s1.librosPrestados);
+        System.out.println(s2.nombre + " : " + s2.librosPrestados);
+
+        // Libros disponibles
+        int total = (l1.disponible ? 1 : 0) + (l2.disponible ? 1 : 0) + 
+                    (l3.disponible ? 1 : 0) + (l4.disponible ? 1 : 0);
+        System.out.println("Disponibles: " + total);
+    }
+}
